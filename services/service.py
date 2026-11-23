@@ -8,7 +8,7 @@ class Services:
     def criar_pesquisador(self, nome, idade, ativo, especialidade):
         if nome is None or nome.strip() == "":
             raise ValueError("Você deve preencher o nome")
-        pesquisador = (nome.strip(), (description or "").strip(), 0)
+        pesquisador = (nome.strip(), (especialidade or "").strip(), 0)
         return self.pesquisadores.create(pesquisador)
 
     def listar_pesquisador(self):
@@ -23,7 +23,7 @@ class Services:
         atual = self.pesquisadores.find_by_id(pesquisador_id)
         if atual is None:
             return False
-        pesquisador = (nome.strip(), (ativo or "").strip(), atual[3], pesquisador_id)
+        pesquisador = (nome.strip(), (especialidade or "").strip(), atual[3], pesquisador_id)
         return self.pesquisadores.update(pesquisador)
 
     def pegar_pesquisador(self, pesquisador_id):
