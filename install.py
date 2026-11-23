@@ -13,12 +13,12 @@ def install():
 
         total = connection.execute("SELECT COUNT(*) FROM pesquisadores").fetchone()[0]
         if total == 0:
-            connection.executemany("INSERT INTO pesquisadores (id, nome, idade, ativo, especialidade) VALUES (?, ?, ?, ?, ?)",
-              [(id, "João", 38, True, "Arqueologia"),
-               (id, "Maria", 25, True, "Arqueologia"),
-               (id, "Mário", 72, False, "Paleontologia"),
-               (id, "Pedro", 21, True, "Museologia"),
-               (id, "José", 67, False, "Arqueologia"),
+            connection.executemany("INSERT INTO pesquisadores (nome, idade, ativo, especialidade) VALUES (?, ?, ?, ?)",
+              [("João", 38, True, "Arqueologia"),
+               ("Maria", 25, True, "Arqueologia"),
+               ("Mário", 72, False, "Paleontologia"),
+               ("Pedro", 21, True, "Museologia"),
+               ("José", 67, False, "Arqueologia"),
                 ],)
         connection.commit()
 

@@ -1,5 +1,3 @@
-from repository.dao_entity import DAOEntity
-
 class Services:
 
     def __init__(self, pesquisadores):
