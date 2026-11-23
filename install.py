@@ -25,7 +25,9 @@ def install():
 
     finally:
         connection.close()
-        
+    
+    connection = get_connection()
+
     try:
         connection.execute("DROP TABLE IF EXISTS dinossauros;")
         
@@ -63,10 +65,13 @@ def install():
                 )
                 
 
-        conexao.commit()
+        connection.commit()
         
     finally:
         connection.close()
+    
+    connection = get_connection()
+
     
     try:
         connection.execute("DROP TABLE IF EXISTS habitat;")    
