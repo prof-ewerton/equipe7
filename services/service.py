@@ -1,4 +1,4 @@
-class Services:
+"""class Services:
 
     def __init__(self, dinossauros):
         self.dinossauros = pesquisadores
@@ -28,7 +28,7 @@ class Services:
         if self.dinossauros.find_by_id(dinossauro_id) is None:
             return False
         return self.dinossauros.delete(dinossauro_id)
-
+"""
 
 
 

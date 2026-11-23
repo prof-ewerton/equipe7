@@ -1,4 +1,4 @@
-class Habitat_Service:
+"""class Habitat_Service:
     def __init__(self, habitat):
         self.habitat = habitat
     
@@ -22,4 +22,4 @@ class Habitat_Service:
             return False
         habitat = (nome.strip(), (bioma or "").strip(), atual[3], habitat_id)
         return self.habitats.update(habitat)
-    
+    """
