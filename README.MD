@@ -27,3 +27,8 @@ A funcionalidade deverá:
 6. Validar se o atributo string não está vazio ou preenchido apenas com espaços.
 7. Validar se o valor digitado para o atributo de categoria corresponde exatamente a uma das três opções permitidas, rejeitando valores incorretos ou com erros de digitação.
 8. Persistir o registro no banco de dados e informar ao usuário se o cadastro foi realizado com sucesso.
+
+7. Parque Jurássico - Mundo dos dinossauros
+Sistema para administrar dinossauros e pesquisas pré-históricas
+
+entidade 1 (Vpantaleao) - Dinossauro - nome str, idade str, carnívoro bool, espécie str
