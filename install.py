@@ -21,6 +21,23 @@ def install():
                ("José", 67, False, "Arqueologia"),
                 ],)
         connection.commit()
+        
+        connection.execute("""CREATE TABLE IF NOT EXISTS habitat (id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        capacidade INTEGER NOT NULL DEFAULT 0,
+        seguro BOOLEAN NOT NULL DEFAULT 0,
+        bioma TEXT NOT NULL)""")
+
+        total_habitat = connection.execute("SELECT COUNT(*) FROM habitat").fetchone()[0]
+        if total == 0:
+            connection.executemany("INSERT INTO habitat (nome, capacidade, seguro, bioma) VALUES (?, ?, ?, ?)",
+              [("Velociraptor", 12, True, "Pantanal"),
+               ("Trex", 33, False, "Amazônia"),
+               ("Megalodonte", 5, False, "Cerrado"),
+               ("Animais marinhos minúsculos ", 8, True, "Caatinga"),
+               ("Aves jurássicas", 14, True, "Pampas"),
+                ],)
+        connection.commit()
 
     finally:
         connection.close()
