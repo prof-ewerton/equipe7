@@ -38,3 +38,6 @@ Sistema para administrar dinossauros e pesquisas pré-históricas
 entidade 1 (Vpantaleao) - Dinossauro - nome str, idade str, carnívoro bool, espécie str
 
 Daniel. Habitat - nome(string), capacidade(integer), seguro (boolean), bioma (string)
+
+Vpantaleao. Dinossauro - nome str, idade str, carnívoro bool, espécie str
+
