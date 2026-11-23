@@ -1,4 +1,5 @@
-from database.connection import get_db_connection
+from database.connection import get_connection
+import sqlite3
 
 def install():
     connection = get_connection()
@@ -21,9 +22,10 @@ def install():
                ("José", 67, False, "Arqueologia"),
                 ],)
         connection.commit()
+
     finally:
         connection.close()
-
+        
     try:
         connection.execute("DROP TABLE IF EXISTS dinossauros;")
         
@@ -62,6 +64,7 @@ def install():
                 
 
         conexao.commit()
+        
     finally:
         connection.close()
     
@@ -88,7 +91,6 @@ def install():
     finally:
         connection.close()
 
-        
 if __name__ == "__main__":
     install()
     print("Banco de dados instalado com sucesso.")
