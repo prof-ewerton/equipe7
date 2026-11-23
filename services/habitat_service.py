@@ -1,8 +1,12 @@
-def criar_habitat(self, nome, capacidade, seguro, bioma):
+class Habitat_Service:
+    def __init__(self, habitat):
+        self.habitat = habitat
+    
+    def criar_habitat(self, nome, capacidade, seguro, bioma):
         if nome is None or nome.strip() == "":
             raise ValueError("Você deve preencher o nome")
         habitat = (nome.strip(), (bioma or "").strip(), 0)
-        return self..create(habitat)
+        return self.create(habitat)
 
     def listar_habitat(self):
         return self.habitats.find_all()
