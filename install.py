@@ -1,4 +1,4 @@
-from database.connection import get_connection
+from database.connection import get_db_connection
 
 def install():
     connection = get_connection()
@@ -21,6 +21,52 @@ def install():
                ("José", 67, False, "Arqueologia"),
                 ],)
         connection.commit()
+    finally:
+        connection.close()
+
+    try:
+        connection.execute("DROP TABLE IF EXISTS dinossauros;")
+        
+        connection.execute("""
+            CREATE TABLE IF NOT EXISTS dinossauros (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nome TEXT NOT NULL,
+                idade TEXT NOT NULL,
+                carnivoro BOOLEAN NOT NULL,
+                especie TEXT NOT NULL
+            )
+        """)
+
+        cursor = connection.execute("SELECT COUNT(*) FROM dinossauros")
+        if cursor.fetchone()[0] == 0:
+            connection.execute(
+                "INSERT INTO dinossauros (nome, idade, carnivoro, especie ) VALUES (?, ?, ?, ?)",
+                ("bob","12",True,"TiranossauroRex"),
+                )
+            connection.execute(
+                "INSERT INTO dinossauros (nome, idade, carnivoro, especie ) VALUES (?, ?, ?, ?)",
+                ("tony","13",False,"Mosassauro"),
+                )
+            connection.execute(
+                "INSERT INTO dinossauros (nome, idade, carnivoro, especie ) VALUES (?, ?, ?, ?)",
+                ("patatchi","17",True,"Pterodactilo"),
+                )
+            connection.execute(
+                "INSERT INTO dinossauros (nome, idade, carnivoro, especie ) VALUES (?, ?, ?, ?)",
+                ("Carna","16",False,"Mosassauro"),
+                )
+            connection.execute(
+                "INSERT INTO dinossauros (nome, idade, carnivoro, especie ) VALUES (?, ?, ?, ?)",
+                ("Poppy","9",False,"Estegossauro"),
+                )
+                
+
+        conexao.commit()
+    finally:
+        connection.close()
+    
+    try:
+        connection.execute("DROP TABLE IF EXISTS habitat;")    
         
         connection.execute("""CREATE TABLE IF NOT EXISTS habitat (id INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT NOT NULL,
@@ -42,8 +88,7 @@ def install():
     finally:
         connection.close()
 
-
+        
 if __name__ == "__main__":
     install()
     print("Banco de dados instalado com sucesso.")
-
