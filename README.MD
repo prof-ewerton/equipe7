@@ -28,12 +28,10 @@ A funcionalidade deverá:
 7. Validar se o valor digitado para o atributo de categoria corresponde exatamente a uma das três opções permitidas, rejeitando valores incorretos ou com erros de digitação.
 8. Persistir o registro no banco de dados e informar ao usuário se o cadastro foi realizado com sucesso.
 
-<<<<<<< HEAD
-# Entidades
-Paulo. pesquisador - nome(string), idade(integer), ativo(boolean), especialidade (string)
-=======
 7. Parque Jurássico - Mundo dos dinossauros
 Sistema para administrar dinossauros e pesquisas pré-históricas
 
 entidade 1 (Vpantaleao) - Dinossauro - nome str, idade str, carnívoro bool, espécie str
->>>>>>> 60b2ee9be579b5539406f865c4f8bad8defcc06f
+Paulo. Entidade 3 (pesquisador) - nome(string), idade(integer), ativo(boolean), especialidade (string)
+
+
